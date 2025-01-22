@@ -7,5 +7,12 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^1.1.1",
+    "@hono/node-server": "^1.13.7",
+    "ai": "^4.1.1",
+    "hono": "^4.6.17",
+    "zod": "^3.24.1"
   }
 }
