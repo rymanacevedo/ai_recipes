@@ -1,6 +1,6 @@
-import {smallModel} from "./shared/utils.ts";
-import {z} from "zod";
-import {streamObject} from "ai";
+import { z } from "zod";
+import { streamObject } from "ai";
+import { smallModel } from "../../shared/utils";
 
 const model = smallModel;
 
@@ -16,7 +16,7 @@ const schema = z.object({
     }),
 });
 
-export const createRecipe = async(input:string) => {
+export const createRecipe = async ( input:string) => {
     const result = await streamObject({
         model,
         schema,
@@ -38,5 +38,5 @@ export const createRecipe = async(input:string) => {
     return finalObject.recipe;
 }
 
-const reciple = await createRecipe(`How can I make pizza? I am lactose intolerant though`);
+const reciple = createRecipe(`How can I make pizza? I am lactose intolerant though`);
 console.log(reciple);
